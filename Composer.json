@@ -1,0 +1,15 @@
+{
+    "name": "maciejkrupinski/products-search",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "mack3d",
+            "email": "mack3d@gmail.com"
+        }
+    ],
+    "require": {}
+}
