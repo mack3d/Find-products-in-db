@@ -5,6 +5,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 use \Klein\Klein;
 use App\Controllers\ProductController;
 use App\Controllers\LoginController;
+use App\Utils\DBConnection;
+
+$db = new DBConnection();
 
 $router = new Klein();
 
