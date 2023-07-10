@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 class ProductController
 {
-    public function index()
+    public function show_products()
     {
-        echo 'Endpoint /products';
+        echo '<h2>Product list</h2>';
     }
 }
