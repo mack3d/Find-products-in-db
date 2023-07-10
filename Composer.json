@@ -2,7 +2,7 @@
     "name": "maciejkrupinski/products-search",
     "autoload": {
         "psr-4": {
-            "app\\": "./"
+            "App\\": "app"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "mack3d@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "klein/klein": "^2.1"
+    }
 }
