@@ -16,7 +16,8 @@ $productController = new ProductController();
 $router->respond('GET', '/[products|]', function () use ($productController) {
     $authController = new AuthController();
     $authController->authenticate();
-    $productController->show_products();
+    $params = $_GET;
+    $productController->show_products($params);
 });
 
 $loginController = new LoginController();

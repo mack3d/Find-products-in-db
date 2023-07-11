@@ -5,6 +5,7 @@
 {% endblock %}
 {% block content %}
     <h1 onclick="myAlert()">Products</h1>
+    <form><input type="text" name="limit" id="limit" placeholder="limit" value="{{ params.limit }}" /><input type="text" name="offset" id="offset" placeholder="offset" value="{{ params.offset }}" /><input type="submit"></form>
     <table>
         <tr>
             <th>ID</th>
@@ -24,4 +25,4 @@
 
     </table>
 
-    {% endblock %}
+{% endblock %}

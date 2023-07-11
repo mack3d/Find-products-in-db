@@ -22,7 +22,8 @@ class ProductsModel
     public function getProducts($params)
     {
         $query = $this->buildQuery($params);
-        $query .= " ORDER BY $this->orderBy $this->sort LIMIT $this->offset, $this->limit";
+        $this->offset = $this->offset * $this->limit;
+        $query .= " ORDER BY $this->orderBy $this->sort LIMIT $this->limit OFFSET $this->offset";
         $stmt = $this->db->query($query);
         $products = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $products;
@@ -30,7 +31,12 @@ class ProductsModel
 
     private function buildQuery($params)
     {
-
-        return "SELECT * FROM $this->table";
+        $query = "SELECT * FROM $this->table";
+        foreach ($params as $key => $value) {
+            if (isset($this->$key)) {
+                $this->$key = $value;
+            }
+        }
+        return $query;
     }
 }

@@ -9,6 +9,7 @@ use Twig\Environment;
 class ProductController
 {
     private $twig;
+
     public function __construct()
     {
         $loader = new FilesystemLoader(__DIR__ . '/../Views/Templates');
@@ -17,12 +18,11 @@ class ProductController
             'auto_reload' => true
         ]);
     }
-    public function show_products()
+    public function show_products($params)
     {
         $models = new ProductsModel();
-        $products = $models->getProducts((object)array('limit' => 10));
+        $products = $models->getProducts((object)$params);
 
-        echo $this->twig->render('product.twig', ['products' => $products]);
-        //require __DIR__ . '/../Views/Products.view.php';
+        echo $this->twig->render('product.twig', ['products' => $products, 'params' => $params]);
     }
 }

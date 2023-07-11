@@ -66,6 +66,12 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
         $macros = $this->macros;
         // line 7
         echo "    <h1 onclick=\"myAlert()\">Products</h1>
+    <form><input type=\"text\" name=\"limit\" id=\"limit\" placeholder=\"limit\" value=\"";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["params"] ?? null), "limit", [], "any", false, false, false, 8), "html", null, true);
+        echo "\" /><input type=\"text\" name=\"offset\" id=\"offset\" placeholder=\"offset\" value=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["params"] ?? null), "offset", [], "any", false, false, false, 8), "html", null, true);
+        echo "\" /><input type=\"submit\"></form>
     <table>
         <tr>
             <th>ID</th>
@@ -75,27 +81,27 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
         </tr>
 
         ";
-        // line 16
+        // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 17
+            // line 18
             echo "        <tr>
             <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kodn", [], "any", false, false, false, 18), "html", null, true);
-            echo "</td>
-            <td>";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kod", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kodn", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
             <td>";
             // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "ilosc", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kod", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
             <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "cena", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "ilosc", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "cena", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
         </tr>
         ";
@@ -103,11 +109,11 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 25
         echo "
     </table>
 
-    ";
+";
     }
 
     public function getTemplateName()
@@ -122,7 +128,7 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 24,  98 => 21,  94 => 20,  90 => 19,  86 => 18,  83 => 17,  79 => 16,  68 => 7,  64 => 6,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
+        return array (  113 => 25,  104 => 22,  100 => 21,  96 => 20,  92 => 19,  89 => 18,  85 => 17,  71 => 8,  68 => 7,  64 => 6,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
