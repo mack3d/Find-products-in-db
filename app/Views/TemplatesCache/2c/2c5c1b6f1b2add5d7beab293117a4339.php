@@ -24,27 +24,48 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'head' => [$this, 'block_head'],
+            'content' => [$this, 'block_content'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 1
-        echo "<!-- hello.twig -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset=\"UTF-8\">
-    <title>Products</title>
-    <script src=\"public/js/product.js\"></script>
-</head>
-<body>
-    
-    <h1 onclick=\"myAlert()\">Products</h1>
+        $this->parent = $this->loadTemplate("base.html", "product.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        echo "Products";
+    }
+
+    // line 3
+    public function block_head($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 4
+        echo "<script src=\"public/js/product.js\"></script>
+";
+    }
+
+    // line 6
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 7
+        echo "    <h1 onclick=\"myAlert()\">Products</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -52,41 +73,41 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
             <th>Price</th>
             <th>Quantity</th>
         </tr>
-        
+
         ";
-        // line 20
+        // line 16
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 21
+            // line 17
             echo "        <tr>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kodn", [], "any", false, false, false, 22), "html", null, true);
+            <td>";
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kodn", [], "any", false, false, false, 18), "html", null, true);
             echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kod", [], "any", false, false, false, 23), "html", null, true);
+            <td>";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "kod", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "ilosc", [], "any", false, false, false, 24), "html", null, true);
+            <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "ilosc", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-                <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "cena", [], "any", false, false, false, 25), "html", null, true);
+            <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "cena", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
-            </tr>
+        </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 24
         echo "
     </table>
-</body>
-</html>";
+
+    ";
     }
 
     public function getTemplateName()
@@ -101,7 +122,7 @@ class __TwigTemplate_64cb566388938f174b6f2868855006e6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  86 => 28,  77 => 25,  73 => 24,  69 => 23,  65 => 22,  62 => 21,  58 => 20,  37 => 1,);
+        return array (  107 => 24,  98 => 21,  94 => 20,  90 => 19,  86 => 18,  83 => 17,  79 => 16,  68 => 7,  64 => 6,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()

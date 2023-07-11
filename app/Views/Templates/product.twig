@@ -1,13 +1,9 @@
-<!-- hello.twig -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Products</title>
-    <script src="public/js/product.js"></script>
-</head>
-<body>
-    
+{% extends "base.html" %}
+{% block title %}Products{% endblock %}
+{% block head %}
+<script src="public/js/product.js"></script>
+{% endblock %}
+{% block content %}
     <h1 onclick="myAlert()">Products</h1>
     <table>
         <tr>
@@ -16,16 +12,16 @@
             <th>Price</th>
             <th>Quantity</th>
         </tr>
-        
+
         {% for product in products %}
         <tr>
-                <td>{{ product.kodn }}</td>
-                <td>{{ product.kod }}</td>
-                <td>{{ product.ilosc }}</td>
-                <td>{{ product.cena }}</td>
-            </tr>
+            <td>{{ product.kodn }}</td>
+            <td>{{ product.kod }}</td>
+            <td>{{ product.ilosc }}</td>
+            <td>{{ product.cena }}</td>
+        </tr>
         {% endfor %}
 
     </table>
-</body>
-</html>
+
+    {% endblock %}
