@@ -1,0 +1,31 @@
+<!-- hello.twig -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <script src="public/js/product.js"></script>
+</head>
+<body>
+    
+    <h1 onclick="myAlert()">Products</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        
+        {% for product in products %}
+        <tr>
+                <td>{{ product.kodn }}</td>
+                <td>{{ product.kod }}</td>
+                <td>{{ product.ilosc }}</td>
+                <td>{{ product.cena }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
